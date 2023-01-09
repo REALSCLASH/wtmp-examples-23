@@ -1,1 +1,2 @@
-console.log('Hello console!');
+//Author Realschs
+console.log('Eka webpack app!');
