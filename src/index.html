@@ -4,14 +4,77 @@
     <meta charset="utf-8"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="assets/styles.css">
-  </head>
-  <body>
-    <p>
-      Hello! Open the developer tools, please.<br />
-      Start by editing the files in <code>src/</code> folder.
-    <p>
-      Tähän jotain uutta!
-    </p>
-    </p>
-  </body>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <nav>
+                <ul>
+                    <li><a href="#">Etusivu</a></li>
+                    <li><a href="#">Ruokalistat</a></li>
+                    <li><a href="#">Ravintolat</a></li>
+                    <li><a href="#">Yhteystiedot</a></li>
+
+                    <div class="input-icons">
+                    <i class="fa-light fa-magnifying-glass"></i>
+                    <input type="text" class="search-input" placeholder=" Hae ravintolaa nimellä..">
+                </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+    </div>
+    <div class="container2">
+        <div class="item left">
+            <h1>Lounari</h1>
+            <p>Mitä tänään syötäisiin?</p>
+        </div>
+
+
+        <div class="item right">
+            <img src="/src/assets/img/kagyana-2955466-768x509.jpg">
+        </div>
+
+
+        <div class="item info">
+            <p>Mitä tänään syötäisiin? Tuttu tarina ennen lounashetkeä.
+                Palvelu etsii lähellä olevat ruokapaikat, sekä näyttää niiden päivittäisen lounaslistan. Viikottaiset lounaslistat
+                ovat myös käytettävissäsi. Pääset niihin klikkaamalla ravintolan logoa.
+            </p>
+        </div>
+
+
+        <div class="item dl">
+            <div class="textbox">
+                <p>Ravintola 2</p>
+               </div>
+            </p>
+        </div>
+
+
+        <div class="item dr">
+
+
+
+           <div class="textbox2">
+            <button id="changeLanguage">Change Language</button>
+            <button id="sortCourses">Sort Courses</button>
+            <button id="randomBtn">Random dish</button>
+
+            <div id="courses">
+
+              <p></p>
+
+            </div>
+           </div>
+        </div>
+
+    </div>
+</body>
 </html>
