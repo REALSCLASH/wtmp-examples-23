@@ -1,97 +1,26 @@
-html {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(240,121,235,1) 35%, rgba(0,212,255,1) 100%);
-}
+let data = [
+  { name: "Lingonberry jam", price: 4.0 },
+  { name: "Mushroom and bean casserole", price: 5.5 },
+  { name: "Chili-flavoured wheat", price: 3.0 },
+  { name: "Vegetarian soup", price: 4.8 },
+  { name: "Pureed root vegetable soup with smoked cheese", price: 8.0 },
+];
 
-body {
-	width: 50%;
-	max-width: 800px;
-	min-width: 480px;
-	margin: 15% auto;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-}
+const validateMealName = (name) =>
+  /^[A-Z][A-Za-z0-9\s\-\/\(\),]{3,63}$/.test(name);
+console.log(validateMealName("Mushroom and bean casserole"));
 
-.form input[type="number"] {
-  width: 200px;
-}
+data.sort((a, b) => a.price - b.price);
+console.log(data);
 
-.lastResult {
-  color: white;
-  padding: 3px;
-}
+let filteredData = data.filter((item) => item.price < 5);
+console.log(filteredData);
 
-h1 {
-  font-size: 40px;
-  color: hotpink;
-  text-align: center;
-  line-height: 23px;
+let updatedData = data.map((item) => {
+  item.price = item.price + (item.price * 15) / 100;
+  return item;
+});
+console.log(updatedData);
 
-}
-
-p{
-  font-size: 20px;
-  text-align: center;
-  line-height: 24px;
-}
-
-.box {
-	background-color: black;
-	/* background-size: 40px 40px 40px; */
-	width: 400px;
-	height: 122px;
-	border-radius: 20px;
-	display: inline-block;
-}
-.guessSubmit {
-  box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #cd4cd4 5%, #cd4cd4 100%);
-	background-color:#33bdef;
-	border-radius:6px;
-	border:1px solid #009dff;
-	display:inline-block;
-	cursor:pointer;
-	color:white;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	padding:10px 24px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-
-}
-
-.guessSubmit:hover {
-	background:linear-gradient(to bottom, #cd4cd4 5%, #33bdef 100%);
-	background-color:#cd4cd4;
-}
-.guessSubmit:active {
-	position:relative;
-	top:1px;
-}
-
-button {
-  box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #cd4cd4 5%, #cd4cd4 100%);
-	background-color:#33bdef;
-	border-radius:6px;
-	border:1px solid #009dff;
-	display:inline-block;
-	cursor:pointer;
-	color:white;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	padding:10px 24px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-
-}
-
-.lastResult p{
-	max-width: 20px;
-}
+let totalCost = data.reduce((acc, item) => acc + item.price, 0);
+console.log("cost for whole menu =" + totalCost);
