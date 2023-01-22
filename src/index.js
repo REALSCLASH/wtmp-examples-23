@@ -1,3 +1,4 @@
+
 const minNumb = 1;
 const maxNumb = 100;
 const maxGuesses = 10;
@@ -17,6 +18,12 @@ const guessField = document.querySelector('.guessField');
 
 let guessCount = 1;
 let resetButton;
+
+let computerGuess = -1;
+let guessHistory = [];
+
+
+
 
 
 const checkGuess = () => {
@@ -55,7 +62,10 @@ const checkGuess = () => {
   guessField.focus();
 };
 
-guessSubmit.addEventListener('click', checkGuess);
+guessSubmit.addEventListener('click', function(){
+  checkGuess();
+  compPlayer();
+});
 
 const setGameOver= () => {
   guessField.disabled = true;
@@ -95,3 +105,41 @@ const resetGame =() => {
 
   randomNumber = Math.floor(Math.random() * (maxNumb - minNumb + 1)) + minNumb;
 };
+
+
+
+const compPlayer = () => {
+    //range of possible numbers
+    let min = minNumb;
+    let max = maxNumb;
+
+    //number of guesses
+    let guessCount = 0;
+
+     guessCount = 0;
+    guessHistory = [];
+    randomNumber = Math.floor(Math.random() * (maxNumb - minNumb + 1)) + minNumb;
+
+
+    // while the guess is not correct
+    while (computerGuess !== randomNumber) {
+        // increment the number of guesses
+        guessCount++;
+        computerGuess = Math.floor(Math.random() * (max - min + 1)) + min;
+        // save the guess to the history
+        guessHistory.push(computerGuess);
+        if (computerGuess === randomNumber) {
+            console.log(`It took the computer ${guessCount} guesses.`);
+            console.log(`Computer guess history: ${guessHistory}`);
+            break;
+        } else if (computerGuess < randomNumber) {
+            min = computerGuess + 1;
+        } else {
+            max = computerGuess - 1;
+        }
+    }
+
+};
+
+
+
