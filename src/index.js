@@ -95,3 +95,82 @@ const resetGame =() => {
 
   randomNumber = Math.floor(Math.random() * (maxNumb - minNumb + 1)) + minNumb;
 };
+
+
+
+
+let password = "cheat";
+let input = "";
+
+//week 3
+
+//i
+// Listen for keydown events
+document.addEventListener("keydown", function(event) {
+    input += event.key;
+     // Check if it matches the password
+    checkPassword();
+});
+
+// Function to check if the input matches the password
+function checkPassword() {
+    if (input === password) {
+        alert("Cheat code activated!");
+        input = "";
+    }
+}
+
+//ii
+document.addEventListener("dblclick", function(event) {
+  // Get the x and y coordinates
+  let x = event.clientX;
+  let y = event.clientY;
+
+  // Log the coordinates to the console
+  console.log("Double-click at x: " + x + ", y: " + y);
+});
+
+//iii
+let touchElement = document.createElement("div");
+touchElement.innerHTML = "Touch me";
+touchElement.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch") {
+        console.log("Touch detected");
+    }
+});
+document.body.appendChild(touchElement);
+
+
+
+//iv
+let idleTime = 0;
+let message = document.createElement("div");
+message.innerHTML = "Hurry Up!";
+message.style.display = "none";
+message.style.backgroundColor = "red";
+document.body.appendChild(message);
+
+//Increment the idle time counter every second.
+let idleInterval = setInterval(() => {
+    idleTime = idleTime + 1;
+    if (idleTime > 14) { // 15 seconds
+        message.style.display = "block";
+    }
+}, 1000);
+
+document.onclick = (e) => {
+  idleTime = 0;
+  message.style.display = "none";
+};
+
+
+// Reset the timer on key press.
+document.onkeydown = (e) => {
+    idleTime = 0;
+    message.style.display = "none";
+};
+
+//v
+
+
+
