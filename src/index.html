@@ -1,80 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- navbar -->
     <div class="navbar">
-        <div class="container flex">
-            <nav>
-                <ul>
-                    <li><a href="#">Etusivu</a></li>
-                    <li><a href="#">Ruokalistat</a></li>
-                    <li><a href="#">Ravintolat</a></li>
-                    <li><a href="#">Yhteystiedot</a></li>
+      <div class="container flex">
+        <nav>
+          <ul>
+            <li><a href="#">Etusivu</a></li>
+            <li><a href="#">Ruokalistat</a></li>
+            <li><a href="#">Ravintolat</a></li>
+            <li><a href="#">Yhteystiedot</a></li>
 
-                    <div class="input-icons">
-                    <i class="fa-light fa-magnifying-glass"></i>
-                    <input type="text" class="search-input" placeholder=" Hae ravintolaa nimellä..">
-                </div>
-                </ul>
-            </nav>
-        </div>
+            <div class="input-icons">
+              <input
+                type="text"
+                class="search-input"
+                placeholder=" Hae ravintolaa nimellä.."
+              />
+            </div>
+          </ul>
+        </nav>
+      </div>
     </div>
 
+    <div class="container3">
+      <div class="green-part">
+        <h2 class="text-overlay" id="h2-heading">Lounari</h2>
+        <p class="text-overlay" id="p-paragraph">Missä tänään syötäisiin?</p>
+      </div>
+    </div>
 
+    <div class="info-container">
+      <div class="item info">
+        <div class="wrapper">
+          <div class="layer-1"></div>
+          <div class="layer-2"></div>
+          <div class="layer-3"></div>
+          <div class="layer-4"></div>
 
     </div>
-    <div class="container2">
-        <div class="item left">
-            <h1>Lounari</h1>
-            <p>Mitä tänään syötäisiin?</p>
+        <p>
+          Mitä tänään syötäisiin? Tuttu tarina ennen lounashetkeä. Palvelu etsii
+          lähellä olevat ruokapaikat, sekä näyttää niiden päivittäisen
+          lounaslistan. Viikottaiset lounaslistat ovat myös käytettävissäsi.
+          Pääset niihin klikkaamalla ravintolan logoa.
+        </p>
+
+    </div>
+    </div>
+
+      <div class="item dl">
+        <button id="lang-button">Change Language</button>
+        <button id="sort-button">Sort Courses</button>
+        <button id="rand-button">Random dish</button>
+        <div class="textbox">
+          <img
+            id="ravintolakuva"
+            src="./assets/img/sodexokuva.png"
+            alt="kuva"
+          />
+          <div class="ravintola-teksti">
+            <h1>100m</h1>
+            <svg
+              id="sijainti"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 48 60"
+              style="enable-background: new 0 0 48 48"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M9,18c0,7.98,13.63,25.85,14.21,26.61C23.4,44.85,23.69,45,24,45s0.6-0.15,0.79-0.39C25.37,43.85,39,25.98,39,18   c0-8.27-6.73-15-15-15S9,9.73,9,18z M37,18c0,6.27-10.06,20.36-13,24.33C21.06,38.36,11,24.27,11,18c0-7.17,5.83-13,13-13   S37,10.83,37,18z"
+                />
+                <path
+                  d="M14,18c0,5.51,4.49,10,10,10s10-4.49,10-10S29.51,8,24,8S14,12.49,14,18z M32,18c0,4.41-3.59,8-8,8s-8-3.59-8-8s3.59-8,8-8   S32,13.59,32,18z"
+                />
+              </g>
+            </svg>
+
+            <h2>Metropolia Karamalmi</h2>
+            <div class="menu-container"></div>
+            <p></p>
+          </div>
+          </div>
         </div>
+      </div>
+      <div class="item dr">
 
-
-        <div class="item right">
-            <img src="assets/img/kagyana-2955466-768x509.jpg">
-        </div>
-
-
-        <div class="item info">
-            <p>Mitä tänään syötäisiin? Tuttu tarina ennen lounashetkeä.
-                Palvelu etsii lähellä olevat ruokapaikat, sekä näyttää niiden päivittäisen lounaslistan. Viikottaiset lounaslistat
-                ovat myös käytettävissäsi. Pääset niihin klikkaamalla ravintolan logoa.
-            </p>
-        </div>
-
-
-        <div class="item dl">
-            <div class="textbox">
-                <p>Ravintola 2</p>
-               </div>
-            </p>
-        </div>
-
-
-        <div class="item dr">
-
-
-
-           <div class="textbox2">
-            <button id="changeLanguage">Change Language</button>
-            <button id="sortCourses">Sort Courses</button>
-            <button id="randomBtn">Random dish</button>
-
-            <div id="courses">
+        <div class="textbox">
+          <img
+            id="ravintolakuva"
+            src="./assets/img/sodexokuva.png"
+            alt="kuva"
+          />
+          <div class="ravintola-teksti">
+            <h1>100m</h1>
+            <svg
+              id="sijainti"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 48 60"
+              style="enable-background: new 0 0 48 48"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M9,18c0,7.98,13.63,25.85,14.21,26.61C23.4,44.85,23.69,45,24,45s0.6-0.15,0.79-0.39C25.37,43.85,39,25.98,39,18   c0-8.27-6.73-15-15-15S9,9.73,9,18z M37,18c0,6.27-10.06,20.36-13,24.33C21.06,38.36,11,24.27,11,18c0-7.17,5.83-13,13-13   S37,10.83,37,18z"
+                />
+                <path
+                  d="M14,18c0,5.51,4.49,10,10,10s10-4.49,10-10S29.51,8,24,8S14,12.49,14,18z M32,18c0,4.41-3.59,8-8,8s-8-3.59-8-8s3.59-8,8-8   S32,13.59,32,18z"
+                />
+              </g>
+            </svg>
+            <h2>Metropolia Karamalmi</h2>
+            <div class="menu-container"></div>
 
               <p></p>
 
             </div>
-           </div>
+          </div>
         </div>
-
+      </div>
+      <div class="item dll">
+        <div class="textbox">
+          <svg
+            id="plussa"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 128 160"
+            style="enable-background: new 0 0 128 128"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M64,1L64,1C29.2,1,1,29.2,1,64s28.2,63,63,63h0c34.8,0,63-28.2,63-63S98.8,1,64,1z M94,69H69v25H59V69H34V59h25V34h10v25   h25V69z"
+              />
+            </g>
+          </svg>
+          <p>Lisää ravintola</p>
+        </div>
+      </div>
     </div>
-</body>
+    <script>
+      // select the elements with the class 'layerOne' and 'layerTwo'
+const layerOne = document.querySelector('.layer-1');
+const layerTwo = document.querySelector('.layer-2');
+const layerThree = document.querySelector('.layer-4');
+const layerFour= document.querySelector('.layer-3');
+
+// add an event listener for the 'mousemove' event on the 'window' object
+window.addEventListener('mousemove', event => {
+// get the current mouse coordinates
+let mouseX = event.clientX;
+let mouseY = event.clientY;
+
+// calculate the center of the window
+let cx = window.innerWidth / 2;
+let cy = window.innerHeight / 2;
+
+// calculate the distance from the center of the window to the current mouse position
+let from_center_x = cx - mouseX;
+let from_center_y = cy - mouseY;
+
+// apply the CSS transform to the elements with the class 'layerOne' and 'layerTwo'
+layerOne.style.transform = `translateX(${from_center_x / 20}%) translateY(${from_center_y / 30}%)`;
+layerTwo.style.transform = `translateX(${from_center_x / 20}%) translateY(${from_center_y / 30}%)`;
+layerThree.style.transform = `translateX(${from_center_x / 20}%) translateY(${from_center_y / 30}%)`;
+layerFour.style.transform = `translateX(${from_center_x / 20}%) translateY(${from_center_y / 30}%)`;
+});
+
+    </script>
+  </body>
 </html>
+
+
+
+
+
+
